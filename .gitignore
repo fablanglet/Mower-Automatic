@@ -1,0 +1,10 @@
+**/.eslintcache
+**/node_modules
+**/logfile.log
+**/.env
+**/coverage
+**/npm-debug.log
+**/.DS_Store
+**/test/tmp/*
+.DS_Store
+

@@ -1,0 +1,29 @@
+{
+  "name": "auto-mowers-nodejs",
+  "version": "1.0.0",
+  "description": "Automtic mowers",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js --cache",
+    "prestart": "npm run lint",
+    "start": "nodemon --use-strict index.js -w backend -w index.js",
+    "test": "mocha --full-trace --debug tests/*.js"
+  },
+  "author": "Fabina Langlet",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nodemon": "^1.9.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.9.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
+  }
+}
