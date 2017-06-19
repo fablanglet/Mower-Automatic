@@ -20,7 +20,7 @@ or launch test to read file (filename: testfile)
   npm start
 ```
 
-# End point
+## End point
 ```bash
   GET http://localhost:3000/launch
  ``` 
