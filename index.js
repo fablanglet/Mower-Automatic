@@ -1,6 +1,6 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mowersLauncher = require('./mowersLauncher');
+import express from 'express';
+import bodyParser from 'body-parser';
+import mowersLauncher from './mowersLauncher';
 
 const config = {
   port: 3000,

@@ -1,11 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const mowersLauncher = require('../mowersLauncher');
-const expect = require('chai').expect;
+import {
+  expect,
+} from 'chai';
+
+import mowersLauncher from '../mowersLauncher';
 
 describe('Start mowers', () => {
   it('should read files and instanciate mowers', () => {
+    console.log(mowersLauncher);
     const results = mowersLauncher.launchMower();
-    console.log(results);
+    console.info(results);
     expect(results.length).to.equal(2);
   });
 });

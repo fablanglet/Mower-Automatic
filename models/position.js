@@ -2,11 +2,11 @@
 /* eslint-disable no-unused-expressions */
 class Position {
   /**
-  * Position Constructor
-  * @param {String} x Initial x position
-  * @param {String} y Initial y position
-  * @param {Object} area Size of the area {x, y}
-  */
+   * Position Constructor
+   * @param {String} x Initial x position
+   * @param {String} y Initial y position
+   * @param {Object} area Size of the area {x, y}
+   */
   constructor(x, y, area) {
     // Required fields to instantiate a Position
     if (typeof x === 'undefined' || typeof y === 'undefined') {
@@ -19,9 +19,9 @@ class Position {
   }
 
   /**
-  * Change the currention position depending of the cardinal
-  * @param {String} orientation Orientation to apply the move
-  */
+   * Change the currention position depending of the cardinal
+   * @param {String} orientation Orientation to apply the move
+   */
   move(orientation) {
     switch (orientation) {
       case 'N':
@@ -42,4 +42,4 @@ class Position {
   }
 }
 
-module.exports = Position;
+export default Position;

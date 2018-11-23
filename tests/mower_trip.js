@@ -1,10 +1,16 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const Mower = require('../models/mower');
-const expect = require('chai').expect;
+import {
+  expect,
+} from 'chai';
+
+import Mower from '../models/mower';
 
 describe('Trip - Mower', () => {
   it('should have a final position {1,3}N with starting point {1,2}N, command GAGAGAGAA', () => {
-    const mower = new Mower({ x: 1, y: 2 }, 'N');
+    const mower = new Mower({
+      x: 1,
+      y: 2
+    }, 'N');
     mower.move('G');
     expect(mower.toString()).to.equal('1 - 2 - W');
     mower.move('A');
@@ -28,7 +34,10 @@ describe('Trip - Mower', () => {
   });
 
   it('should have a final position {5,1}E with starting point {3,3}E, command AADAADADDA', () => {
-    const mower = new Mower({ x: 3, y: 3 }, 'E');
+    const mower = new Mower({
+      x: 3,
+      y: 3
+    }, 'E');
     mower.move('A');
     expect(mower.toString()).to.equal('4 - 3 - E');
     mower.move('A');
@@ -55,7 +64,10 @@ describe('Trip - Mower', () => {
   });
 
   it('should start at {1,2}N, accept a list of commands GAGAGAGAA and finish at {1,3}N', () => {
-    const mower = new Mower({ x: 1, y: 2 }, 'N');
+    const mower = new Mower({
+      x: 1,
+      y: 2
+    }, 'N');
     mower.trip('GAGAGAGAA');
     expect(mower.currentPosition.x).to.equal(1);
     expect(mower.currentPosition.y).to.equal(3);
@@ -63,7 +75,10 @@ describe('Trip - Mower', () => {
   });
 
   it('should start at {3,3}E, accept a list of commands AADAADADDA and finish at {5,1}E', () => {
-    const mower = new Mower({ x: 3, y: 3 }, 'E');
+    const mower = new Mower({
+      x: 3,
+      y: 3
+    }, 'E');
     mower.trip('AADAADADDA');
     expect(mower.currentPosition.x).to.equal(5);
     expect(mower.currentPosition.y).to.equal(1);

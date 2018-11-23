@@ -1,8 +1,8 @@
 class Orientation {
   /**
-  * Orientation Constructor
-  * @param {initOrientation} Initial Orientation
-  */
+   * Orientation Constructor
+   * @param {initOrientation} Initial Orientation
+   */
   constructor(initOrientation) {
     // Required field to instantiate a mower
     if (typeof initOrientation === 'undefined') {
@@ -12,11 +12,11 @@ class Orientation {
   }
 
   /**
-  * Convert cardinal points to degres depending of the orientation
-  * @param {String} command Cardinal points (N, E, S, W).
-  * @param {String} orientation Left or Right.
-  * @returns {Number} Return degres
-  */
+   * Convert cardinal points to degres depending of the orientation
+   * @param {String} command Cardinal points (N, E, S, W).
+   * @param {String} orientation Left or Right.
+   * @returns {Number} Return degres
+   */
   static getDegres(command, orientation) {
     switch (orientation) {
       case 'N':
@@ -33,10 +33,10 @@ class Orientation {
   }
 
   /**
-  * Convert degres to cardinal points
-  * @param {Number} degres Degres value to convert
-  * @returns {String} Return Cardinal points
-  */
+   * Convert degres to cardinal points
+   * @param {Number} degres Degres value to convert
+   * @returns {String} Return Cardinal points
+   */
   static getOrientation(degres) {
     switch (degres) {
       case 0:
@@ -54,9 +54,9 @@ class Orientation {
   }
 
   /**
-  * Change the orientation
-  * @param {String} command Command to apply (D) for Right and (G) for Left
-  */
+   * Change the orientation
+   * @param {String} command Command to apply (D) for Right and (G) for Left
+   */
   move(command) {
     let degOrientation = 0;
     if (command === 'D') {
@@ -72,12 +72,12 @@ class Orientation {
   }
 
   /**
-  * Return current orientation as String
-  * @returns {String} Current orientation as String
-  */
+   * Return current orientation as String
+   * @returns {String} Current orientation as String
+   */
   toString() {
     return this.currOrientation;
   }
 }
 
-module.exports = Orientation;
+export default Orientation;

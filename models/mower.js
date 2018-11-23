@@ -1,14 +1,13 @@
-const Position = require('./position');
-const Orientation = require('./orientation');
-
+import Position from './position';
+import Orientation from './orientation';
 
 class Mower {
   /**
-  * Mower Constructor
-  * @param {Object} initPosition Initial position {x, y}
-  * @param {String} initOrientation Initial Orientation
-  * @param {Object} area Size of the area {x, y}
-  */
+   * Mower Constructor
+   * @param {Object} initPosition Initial position {x, y}
+   * @param {String} initOrientation Initial Orientation
+   * @param {Object} area Size of the area {x, y}
+   */
   constructor(initPosition, initOrientation, area) {
     // Required field to instantiate a mower
     if (typeof initPosition === 'undefined' || typeof initOrientation === 'undefined') {
@@ -20,9 +19,9 @@ class Mower {
   }
 
   /**
-  * Move a mower 1 time in terme of orientation or position
-  * @param {String} command Command to apply on the mower
-  */
+   * Move a mower 1 time in terme of orientation or position
+   * @param {String} command Command to apply on the mower
+   */
   move(command) {
     if (command.toUpperCase() === 'G' || command.toUpperCase() === 'D') {
       this.currentOrientation.move(command);
@@ -32,9 +31,9 @@ class Mower {
   }
 
   /**
-  * Move a mower multiple time applying all command in serie
-  * @param {String} listCommand A list of command sended as a string
-  */
+   * Move a mower multiple time applying all command in serie
+   * @param {String} listCommand A list of command sended as a string
+   */
   trip(listCommands) {
     for (const command of listCommands) {
       this.move(command);
@@ -42,12 +41,12 @@ class Mower {
   }
 
   /**
-  * String representing the current position and the current orientation of mower.
-  * @returns {String} Return current position and current orientation as String
-  */
+   * String representing the current position and the current orientation of mower.
+   * @returns {String} Return current position and current orientation as String
+   */
   toString() {
     return `${this.currentPosition.x} - ${this.currentPosition.y} - ${this.currentOrientation.toString()}`;
   }
 }
 
-module.exports = Mower;
+export default Mower;

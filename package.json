@@ -7,23 +7,34 @@
     "lint": "eslint . --ext .js --cache",
     "prestart": "npm run lint",
     "start": "nodemon --use-strict index.js -w backend -w index.js",
-    "test": "mocha --full-trace --debug tests/*.js"
+    "test": "jest --coverage --forceExit"
   },
   "author": "Fabina Langlet",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.1.5",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "nodemon": "^1.9.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@types/jest": "^23.3.9",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "chai": "^3.5.0",
     "eslint": "^3.9.0",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "mocha": "^3.1.2",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1",
     "sinon": "^1.17.6"
+  },
+  "jest": {
+    "testRegex": "./tests/.*.js$"
   }
 }
