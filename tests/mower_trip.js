@@ -63,6 +63,38 @@ describe('Trip - Mower', () => {
     expect(mower.currentOrientation.toString()).to.equal('E');
   });
 
+  it.only('should have a final position {1,3}W with starting point {4,4}S, command GADDAAGADAA', () => {
+    const mower = new Mower({
+      x: 4,
+      y: 4,
+    }, 'S');
+    mower.move('G');
+    expect(mower.toString()).to.equal('4 - 4 - E');
+    mower.move('A');
+    expect(mower.toString()).to.equal('5 - 4 - E');
+    mower.move('D');
+    expect(mower.toString()).to.equal('5 - 4 - S');
+    mower.move('D');
+    expect(mower.toString()).to.equal('5 - 4 - W');
+    mower.move('A');
+    expect(mower.toString()).to.equal('4 - 4 - W');
+    mower.move('A');
+    expect(mower.toString()).to.equal('3 - 4 - W');
+    mower.move('G');
+    expect(mower.toString()).to.equal('3 - 4 - S');
+    mower.move('A');
+    expect(mower.toString()).to.equal('3 - 3 - S');
+    mower.move('D');
+    expect(mower.toString()).to.equal('3 - 3 - W');
+    mower.move('A');
+    expect(mower.toString()).to.equal('2 - 3 - W');
+    mower.move('A');
+
+    expect(mower.currentPosition.x).to.equal(1);
+    expect(mower.currentPosition.y).to.equal(3);
+    expect(mower.currentOrientation.toString()).to.equal('W');
+  });
+
   it('should start at {1,2}N, accept a list of commands GAGAGAGAA and finish at {1,3}N', () => {
     const mower = new Mower({
       x: 1,
